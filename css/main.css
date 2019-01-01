@@ -1,0 +1,336 @@
+html, body{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.resetBorders{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+
+header {
+    position: absolute;
+    top: 3%;
+    width: 100%;
+}
+
+#logo{
+    display: inline-block;
+}
+
+.navigation {
+    display: flex;
+    background-color: transparent;
+    list-style-type: none;
+}
+
+.navigation li{
+    position: relative;
+    
+}
+
+.navigation li, p{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+}
+
+p {
+    color: #a2a2a2;    
+}
+
+.navigation li a{
+    text-decoration: none;
+    margin: 1.5em;
+    color: white;
+}
+
+.navigation li a:hover:after,
+.navigation li a:active:after{
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 0 0 65%;  /* This will center the border. */
+    position: absolute;
+    width: 20%; /* Change this to whatever width you want. */
+    padding-top: 3px; /* This creates some space between the element and the border. */
+    border-bottom: 2px solid white; /* This creates the border. Replace black with whatever color you want. */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header div, header nav{
+    margin: 0 5%;
+}
+
+section div{
+    margin: 5%;
+} 
+
+
+#home{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../images/home-bckground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    background-attachment: fixed;
+    background-position: right;
+}
+
+#home-left-content{
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+
+#home-right-content{
+    flex-grow: 3;
+    flex-shrink: 1;
+}
+
+.btnForm{
+    background-color: #f27e20;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: white;
+    width: 170px;
+    height: 50px;
+    border-radius: 30px;
+    border-style: hidden;   
+}
+
+.btnForm:hover{
+    background-color: orangered;
+}
+
+#services{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+#sectionNav{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    top: 4%;
+    width: 100%;
+}
+
+#sectionNav .navigation li a{
+    text-decoration: none;
+    margin: 1.5em;
+    color: black;
+}
+
+#sectionNav .navigation li a:hover:after,
+#sectionNav .navigation li a:active:after{
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 0 0 60%;  /* This will center the border. */
+    position: absolute;
+    width: 20%; /* Change this to whatever width you want. */
+    padding-top: 3px; /* This creates some space between the element and the border. */
+    border-bottom: 2px solid black; /* This creates the border. Replace black with whatever color you want. */
+}
+
+
+#sectionNav div,
+#sectionNav nav{
+    margin: 0 5%;
+}
+
+#services-right-content h1{
+    font-family: '8514oem', 'Poppins', sans-serif;
+    font-size: 72pt;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: -30px;
+}
+
+#services-right-content h2{
+    font-family: '8514oem', 'Poppins', sans-serif;
+    font-size: 29pt;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/*------------- Slider css --------------*/
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: 70px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: rgba(0, 0, 0, 0.8);
+}
+/*End of slider CSS*/
+
+.pagination{
+    margin-left: 0;
+}
+
+.pagination li{
+    list-style-type: none;
+}
+
+.pagination li a{
+    color: #d1d3d7;
+    text-decoration: none;
+}
+
+.pagination li a:hover,
+.pagination li a:active{
+    color: black;
+    text-decoration: none;
+}
+
+.picWave {
+    margin: 10px 0;
+}
+
+.roumors{
+    height: 100vh;
+    padding: 0 5%;
+}
+
+#roumors-header{
+    width: 60%;
+}
+#roumors-header h1:first-child{
+    margin-bottom: -60px;
+}
+
+#roumors-header h1{
+    font-family: '8514oem', 'Poppins', sans-serif;
+    font-size: 72pt;
+    font-weight: 700;
+    margin: 0 0 -30px 0;
+}
+
+#comments-about-us{
+    display: flex;
+    height: 60%;
+}
+
+#comments-about-us div{
+    margin: 0;
+}
+
+#comments-about-us div:nth-child(odd){
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 5% 1%;
+    width: 60%;
+    height: 60%;
+}
+
+#comments-about-us div:nth-child(even){
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+    width: 10%;
+    height: 60%;
+    box-sizing: border-box;
+    padding: 5px;
+}
