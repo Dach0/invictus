@@ -17,7 +17,7 @@
               </li>
             </ul>
             <span class="copyright ml-auto my-auto mr-2">Copyright © 2018
-              <a href="https://designrevision.com" rel="nofollow">DesignRevision</a>
+              <a href="https://designrevision.com" rel="nofollow">Damjan Krivacevic</a>
             </span>
           </footer>
         </main>
@@ -35,5 +35,6 @@
     <script src="scripts/app/app-blog-overview.1.1.0.js"></script> <!-- ova je samo za index.php potrebna -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
     <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

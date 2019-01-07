@@ -1,0 +1,31 @@
+.table_text{
+    display: inline-block;
+}
+
+.show_tables{
+    display: inline-block;
+}
+
+.show_tables ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+.btn-adopt{
+    margin: auto 3px;
+}
+
+.btn_save_project_service{
+    display: flex;
+    align-content: flex-end;
+    margin-top: 1rem;
+/*    margin: 0 1rem 1rem 0;*/
+}
+
+.container_btn_del{
+    display: flex;
+    justify-content: center;
+}
+
+

@@ -24,35 +24,113 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="index.php">
+                <a class="nav-link" href="index.php">
                   <i class="material-icons">edit</i>
                   <span>Statistika</span>
                 </a>
               </li>
+            <!--  Servisi/projekti  -->
               <li class="nav-item">
-                <a class="nav-link " href="services_projects.php">
-                  <i class="material-icons">vertical_split</i>
-                  <span>Servisi/Projekti</span>
-                </a>
-              </li>
+                <a class="nav-link" href="services_projects.php" data-toggle="collapse" data-target="#services_projects"><i class="fa fa-fw fa-caret-down"></i> Servisi/projekti </a>
+                <ul id="services_projects" class="collapse">
+                  <li class="nav-item">
+                    <a class="nav-link " href="services_projects.php?source=view_services">
+                      <i class="material-icons">vertical_split</i>
+                      <span>Pregled servisa</span>
+                    </a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link " href="services_projects.php?source=add_service">
+                      <i class="material-icons">note_add</i>
+                      <span>Dodaj novi servis</span>
+                    </a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link " href="services_projects.php?source=view_projects">
+                      <i class="material-icons">vertical_split</i>
+                      <span>Pregled projekata</span>
+                    </a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link " href="services_projects.php?source=add_project">
+                      <i class="material-icons">note_add</i>
+                      <span>Dodaj novi projekat</span>
+                    </a>
+                  </li>
+                </ul>
+            </li>
+             <!--  /.Servisi/projekti  -->
+             
+             <!--  Rekli su o nama  -->
               <li class="nav-item">
-                <a class="nav-link " href="add-new-post.php">
-                  <i class="material-icons">note_add</i>
-                  <span>Dodaj novi servis/projekat</span>
-                </a>
-              </li>
+                <a class="nav-link" href="services_projects.php" data-toggle="collapse" data-target="#comments_about_us"><i class="fa fa-fw fa-caret-down"></i> Rekli su o nama </a>
+                <ul id="comments_about_us" class="collapse">
+                   <li class="nav-item">
+                    <a class="nav-link " href="comments_about_us.php">
+                      <i class="material-icons">record_voice_over</i>
+                      <span>Pregled komentara o nama</span>
+                    </a>
+                    <li class="nav-item">
+                    <a class="nav-link " href="comments_about_us.php?source=add_comment">
+                      <i class="material-icons">note_add</i>
+                      <span>Dodaj novi komentar</span>
+                    </a>
+                </ul>
+            </li>
+             <!--  /.Rekli su o nama  -->
+             
+             <!--  Klijenti  -->
+              <li class="nav-item">
+                <a class="nav-link" href="services_projects.php" data-toggle="collapse" data-target="#clients"><i class="fa fa-fw fa-caret-down"></i> Klijenti </a>
+                <ul id="clients" class="collapse">
+                     <li class="nav-item">
+                        <a class="nav-link " href="clients.php">
+                          <i class="material-icons">business_center</i>
+                          <span>Pregled klijenata</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="clients.php?source=add_client">
+                          <i class="material-icons">note_add</i>
+                          <span>Dodaj klijenta</span>
+                        </a>
+                      </li>
+                </ul>
+            </li>
+             <!--  /Klijenti  -->
+              
+              
               <li class="nav-item">
                 <a class="nav-link " href="tables.php">
                   <i class="material-icons">table_chart</i>
                   <span>Tabele</span>
                 </a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link " href="user-profile-lite.php">
-                  <i class="material-icons">person</i>
-                  <span>Korisnički profil</span>
-                </a>
-              </li>
+                <a class="nav-link" href="javascript:;" data-toggle="collapse" data-target="#profiles"><i class="fa fa-fw fa-caret-down"></i> Korisnici </a>
+                <ul id="profiles" class="collapse">
+                    <li class="nav-item">
+                        <a class="nav-link " href="user_profile.php">
+                          <i class="material-icons">vertical_split</i>
+                          <span>Lista administratora</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="user_profile.php?source=edit_profile">
+                          <i class="material-icons">person</i>
+                          <span>Korisnički profil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="user_profile.php?source=add_user">
+                          <i class="material-icons">person_add</i>
+                          <span>Dodaj novog korisnika</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+          
               <li class="nav-item">
                 <a class="nav-link " href="errors.php">
                   <i class="material-icons">error</i>

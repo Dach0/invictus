@@ -37,6 +37,16 @@ function redirect($url){
 }
 
 
+function confirmQuery($result){
+
+    global $connection;
+    
+    if(!$result){
+            die("Query FAILED" . mysqli_error($connection));
+        }    
+}
+
+
 //check if method is set
 function ifItIsMethod($method = ''){
     
@@ -96,3 +106,40 @@ function loginUser($username, $password){
     return true;
 }
 // end of logging user and session start
+
+function escape($string){
+    
+    global $connection;
+    return mysqli_real_escape_string($connection, trim($string));    
+}
+
+
+
+function insert_categories(){
+    
+     if(isset($_POST['submit'])){
+         
+         global $connection;
+                        
+           $cat_title = $_POST['cat_title'];
+
+            if($cat_title == ""  or empty($cat_title)){
+                echo "This field should not be empty!";
+            }
+
+            else {
+
+                $stmt = mysqli_prepare($connection, "INSERT INTO category(cat_title) VALUES(?)");
+
+                mysqli_stmt_bind_param($stmt, 's', $cat_title);
+                
+                mysqli_stmt_execute($stmt);
+                
+                if (!$stmt){
+
+                    die ("Nesto nije u redu" . mysqli_error($connection));
+                }
+            }
+
+        }                        
+}

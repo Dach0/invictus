@@ -1,0 +1,61 @@
+   <?php
+
+    if(isset($_POST['create_client'])){
+        
+        
+        $client_name = escape($_POST['comment_author']);
+        
+        $client_logo = $_FILES['image']['name'];
+        $client_logo_tmp = $_FILES['image']['tmp_name'];
+        move_uploaded_file($client_logo_tmp, "../images/$client_logo");
+        
+        if (empty($client_name) || $client_name == ''){
+            echo "<div class='col-lg-3 col-md-8 mt-3'><p class='bg-warning'>Polja ne mogu biti prazna.</p></div>";
+        } else {
+            
+            $query = "INSERT INTO `client`(`client_name`, `client_logo`) VALUES (?,?)";
+            $stmt = mysqli_prepare($connection, $query);
+            mysqli_stmt_bind_param($stmt, 'ss', $client_name, $client_logo);
+            mysqli_stmt_execute($stmt);
+            
+            if(!$stmt){
+                  die("Nesto nije u redu" . mysqli_error($connection));
+            }else {
+                
+                echo "<div class='col-lg-3 col-md-8 mt-3'><p class='bg-success'>Klijent kreiran.  <a href='clients.php'>Pregled klijenata</a></p></div>";
+            
+            }
+            
+        }     
+        }
+    ?>
+          <div class="main-content-container container-fluid px-4">
+            <!-- Page Header -->
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Klijenti</span>
+                <h3 class="page-title">Dodaj novog klijenta</h3>
+              </div>
+            </div>
+            <!-- End Page Header -->
+            <div class="row">
+              <div class="col-lg-9 col-md-12">
+                <!-- Add New Post Form -->
+                <div class="card card-small mb-3">
+                  <div class="card-body">
+                    <form class="add-new-post" action="" method="post" enctype="multipart/form-data">
+                      <input class="form-control form-control-lg mb-3" type="text" name="comment_author" placeholder="Ime klijenta">
+                      <div class="form-group">
+                        <label for="image">Izaberi logo</label>
+                        <input type="file" class="form-control" name="image">
+                      </div>
+                      <div class="btn_save_project_service">
+                          <button class="btn btn-sm btn-accent ml-auto" name="create_client">
+                          <i class="material-icons">file_copy</i> Sačuvaj</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- / Add New Post Form -->
+              </div>
+            </div>
