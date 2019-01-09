@@ -6,7 +6,7 @@
 
    if(ifItIsMethod('post')){
        
-       echo $_POST['username'] . $_POST['password'];
+    //   echo $_POST['username'] . $_POST['password'];
        loginUser($_POST['username'], $_POST['password']);
        
    } 

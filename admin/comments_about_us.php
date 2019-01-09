@@ -39,6 +39,10 @@
                         case "edit_comment":
                             include "includes/edit_comment.php";
                             break;
+                            
+                        case "view_comment":
+                            include "includes/view_comment.php";
+                            break;
                         
                         default :
                             

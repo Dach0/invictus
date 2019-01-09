@@ -1,20 +1,19 @@
 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
             <ul class="nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="../home.php">Home</a>
+              </li>
+<!--         neka moguca navigacija jos
+              <li class="nav-item">
+                <a class="nav-link" href="#">Servisi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">O nama</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Produkti</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
+-->
             </ul>
             <span class="copyright ml-auto my-auto mr-2">Copyright © 2018
               <a href="https://designrevision.com" rel="nofollow">Damjan Krivacevic</a>

@@ -45,7 +45,7 @@
                                 echo "<td>{$client_id}</td>";
                                 echo "<td>{$client_name}</td>";
                                 echo "<td><img width=150 src='/amplitudo/invictus/images/{$client_logo}'></td>";
-                                echo "<td><a class='btn btn-info' href='tables.php?source=edit_comment&u_id={$client_id}'>Edit</a></td>";
+                                echo "<td><a class='btn btn-info' href='clients.php?source=edit_comment&cl_id={$client_id}'>Edit</a></td>";
                                 ?> 
                                
                             <form action="" method="post">
@@ -67,6 +67,8 @@
                 </div>
               </div>
             </div>
+            
+              <p>Note koji se briše: za klijente je besmisleno praviti dugme view complete budući da klijent ima samo logo i ime.</p>
 
 <?php
 if(isset($_POST['delete'])){

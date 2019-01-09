@@ -31,9 +31,17 @@
                         case "edit_profile":
                             include "includes/edit_user_profile.php";
                             break;
+                            
+                         case "edit_user":
+                            include "includes/edit_user.php";
+                            break;
                          
                         case "add_user":
                             include "includes/add_new_user.php";
+                            break;
+                            
+                        case "view_complete":
+                            include "includes/view_user.php";
                             break;
                         
                         default :

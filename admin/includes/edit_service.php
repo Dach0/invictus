@@ -91,6 +91,7 @@
                         <div class="btn_save_project_service">
                           <button class="btn btn-sm btn-accent ml-auto" name="update_service">
                          <i class="material-icons">file_copy</i> Ažuriraj podatke</button>
+                         <a class="btn btn-danger ml-1" href="services_projects.php?source=view_services">Odustani</a>
                         </div>
                     </form>
                   </div>

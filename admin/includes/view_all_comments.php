@@ -29,6 +29,7 @@
                           <th scope="col" class="border-bottom-0">Zvanje autora</th>
                           <th scope="col" class="border-bottom-0">Sadržaj komentara</th>
                           <th scope="col" class="border-bottom-0">Datum</th>
+                          <th scope="col" class="border-bottom-0">Pregled</th>
                           <th scope="col" class="border-bottom-0">Upravljaj podacima</th>
                           <th scope="col" class="border-bottom-0">Uništi</th>
                         </tr>
@@ -51,6 +52,7 @@
                                 echo "<td>{$comment_author_title}</td>";
                                 echo "<td>{$comment_content}</td>";
                                 echo "<td>{$comment_date}</td>";
+                                echo "<td><a class='btn btn-primary' href='comments_about_us.php?source=view_comment&c_id={$comment_id}'>View complete</a></td>";
                                 echo "<td><a class='btn btn-info' href='comments_about_us.php?source=edit_comment&c_id={$comment_id}'>Edit</a></td>";
                                 ?> 
                                

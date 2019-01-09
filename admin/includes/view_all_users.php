@@ -34,6 +34,7 @@
                           <th scope="col" class="border-0">Ime</th>
                           <th scope="col" class="border-0">Prezime</th>
                           <th scope="col" class="border-0">Email</th>
+                          <th scope="col" class="border-0">Pregled</th>
                           <th scope="col" class="border-0">Upravljaj podacima</th>
                           <th scope="col" class="border-0">Uništi</th>
                         </tr>
@@ -58,7 +59,8 @@
                                 echo "<td>{$user_firstname}</td>";
                                 echo "<td>{$user_lastname}</td>";
                                 echo "<td>{$user_email}</td>";
-                                echo "<td><a class='btn btn-info' href='tables.php?user_id={$user_id}'>Edit</a></td>";
+                                echo "<td><a class='btn btn-primary' href='user_profile.php?source=view_complete&u_id={$user_id}'>View complete</a></td>";
+                                echo "<td><a class='btn btn-info' href='user_profile.php?source=edit_user&u_id={$user_id}'>Edit</a></td>";
                                 ?> 
                                
                                 <form action="" method="post">

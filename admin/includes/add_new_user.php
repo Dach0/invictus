@@ -43,8 +43,6 @@
                 <i class="fa fa-check mx-2"></i>
                 <strong>Uspješno!</strong> Dodat je novi administrator! <?php echo "<a href='user_profile.php?source=view_all_users'>Lista administratora</a>";?></div>
                 <?php
-//                
-//                echo "<div class='col-lg-3 col-md-8 mt-3'><p class='bg-success'>Korisnik kreiran.  <a href='user_profile.php?source=view_all_users'>Lista administratora</a></p></div>";
             
             }
             

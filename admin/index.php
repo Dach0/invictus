@@ -24,6 +24,7 @@
               </div>
             </div>
             <!-- End Page Header -->
+             
             <!-- Small Stats Blocks -->
            <?php include "includes/statistic_blocks.php" ?>
             <!-- End Small Stats Blocks -->

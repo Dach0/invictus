@@ -115,31 +115,14 @@ function escape($string){
 
 
 
-function insert_categories(){
+function countFromDb($column, $table){
     
-     if(isset($_POST['submit'])){
-         
-         global $connection;
-                        
-           $cat_title = $_POST['cat_title'];
+    global $connection;
+    $query = "SELECT COUNT($column) FROM $table";
+    $num_of_columns = mysqli_query($connection, $query);
+    confirmQuery($num_of_columns);
+    $row = mysqli_fetch_assoc($num_of_columns);
+    $num_of_columns = $row["COUNT($column)"];
 
-            if($cat_title == ""  or empty($cat_title)){
-                echo "This field should not be empty!";
-            }
-
-            else {
-
-                $stmt = mysqli_prepare($connection, "INSERT INTO category(cat_title) VALUES(?)");
-
-                mysqli_stmt_bind_param($stmt, 's', $cat_title);
-                
-                mysqli_stmt_execute($stmt);
-                
-                if (!$stmt){
-
-                    die ("Nesto nije u redu" . mysqli_error($connection));
-                }
-            }
-
-        }                        
+    return $num_of_columns;
 }

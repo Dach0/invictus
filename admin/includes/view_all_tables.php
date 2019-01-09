@@ -15,7 +15,7 @@
               
               ?>
              
-            <div class="row">
+               <div class="row">
               <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
@@ -30,6 +30,7 @@
                           <th scope="col" class="border-0">Ime</th>
                           <th scope="col" class="border-0">Prezime</th>
                           <th scope="col" class="border-0">Email</th>
+                          <th scope="col" class="border-0">Pregled</th>
                           <th scope="col" class="border-0">Upravljaj podacima</th>
                           <th scope="col" class="border-0">Uništi</th>
                         </tr>
@@ -54,7 +55,8 @@
                                 echo "<td>{$user_firstname}</td>";
                                 echo "<td>{$user_lastname}</td>";
                                 echo "<td>{$user_email}</td>";
-                                echo "<td><a class='btn btn-info' href='tables.php?user_id={$user_id}'>Edit</a></td>";
+                                echo "<td><a class='btn btn-primary' href='user_profile.php?source=view_complete&u_id={$user_id}'>View complete</a></td>";
+                                echo "<td><a class='btn btn-info' href='user_profile.php?source=edit_user&u_id={$user_id}'>Edit</a></td>";
                                 ?> 
                                
                                 <form action="" method="post">
@@ -75,7 +77,6 @@
                 </div>
               </div>
             </div>
-            
             <?php }  ?>
             <!-- End Default Light Table Administratori-->
             
@@ -89,6 +90,7 @@
             confirmQuery($select_all_services);
 
           ?>
+           
             <div class="row">
               <div class="col">
                 <div class="card card-small overflow-hidden mb-4">
@@ -102,6 +104,7 @@
                           <th scope="col" class="border-bottom-0">#</th>
                           <th scope="col" class="border-bottom-0">Vrsta servisa</th>
                           <th scope="col" class="border-bottom-0">Opis servisa</th>
+                          <th scope="col" class="border-bottom-0">Pregled</th>
                           <th scope="col" class="border-bottom-0">Upravljaj servisima</th>
                           <th scope="col" class="border-bottom-0">Uništi servis</th>
                         </tr>
@@ -117,7 +120,8 @@
                                 echo "<td>{$service_id}</td>";
                                 echo "<td>{$service_name}</td>";
                                 echo "<td>{$service_description}</td>";
-                                echo "<td><a class='btn btn-info' href='tables.php?user_id={$service_id}'>Edit</a></td>";
+                                echo "<td><a class='btn btn-primary' href='services_projects.php?source=view_service&s_id={$service_id}'>View complete</a></td>";
+                                echo "<td><a class='btn btn-info' href='services_projects.php?source=edit_service&s_id={$service_id}'>Edit</a></td>";
                            ?> 
                                
                             <form action="" method="post">
@@ -164,6 +168,7 @@
                           <th scope="col" class="border-0">Ime projekta</th>
                           <th scope="col" class="border-0">Slika</th>
                           <th scope="col" class="border-0">Projekat iz servisa</th>
+                          <th scope="col" class="border-0">Pregled</th>
                           <th scope="col" class="border-0">Upravljaj podacima</th>
                           <th scope="col" class="border-0">Uništi</th>
                         </tr>
@@ -184,7 +189,8 @@
                                 echo "<td>{$project_name}</td>";
                                 echo "<td><img width=100 src='/amplitudo/invictus/images/{$project_image}' alt=''></td>";
                                 echo "<td>{$service_name}</td>";
-                                echo "<td><a class='btn btn-info' href='tables.php?user_id={$project_id}'>Edit</a></td>";
+                                echo "<td><a class='btn btn-primary' href='services_projects.php?source=view_project&p_id={$project_id}'>View complete</a></td>";
+                                echo "<td><a class='btn btn-info' href='services_projects.php?source=edit_project&p_id={$project_id}'>Edit</a></td>";
                                 ?> 
                                
                             <form action="" method="post">
@@ -205,6 +211,8 @@
                 </div>
               </div>
             </div>
+
+
             <?php } ?>
             <!-- End Default Light Table Projekti-->
             <!-- Default Dark Table Rekli su o nama-->
@@ -231,6 +239,7 @@
                           <th scope="col" class="border-bottom-0">Zvanje autora</th>
                           <th scope="col" class="border-bottom-0">Sadržaj komentara</th>
                           <th scope="col" class="border-bottom-0">Datum</th>
+                          <th scope="col" class="border-bottom-0">Pregled</th>
                           <th scope="col" class="border-bottom-0">Upravljaj podacima</th>
                           <th scope="col" class="border-bottom-0">Uništi</th>
                         </tr>
@@ -253,7 +262,8 @@
                                 echo "<td>{$comment_author_title}</td>";
                                 echo "<td>{$comment_content}</td>";
                                 echo "<td>{$comment_date}</td>";
-                                echo "<td><a class='btn btn-info' href='tables.php?user_id={$comment_id}'>Edit</a></td>";
+                                echo "<td><a class='btn btn-primary' href='comments_about_us.php?source=view_comment&c_id={$comment_id}'>View complete</a></td>";
+                                echo "<td><a class='btn btn-info' href='comments_about_us.php?source=edit_comment&c_id={$comment_id}'>Edit</a></td>";
                                 ?> 
                                
                             <form action="" method="post">
@@ -314,8 +324,8 @@
                                 echo "<tr>";
                                 echo "<td>{$client_id}</td>";
                                 echo "<td>{$client_name}</td>";
-                                echo "<td><img width=150 src='{$client_logo}'></td>";
-                                echo "<td><a class='btn btn-info' href='tables.php?source=edit_comment&u_id={$client_id}'>Edit</a></td>";
+                                echo "<td><img width=150 src='/amplitudo/invictus/images/{$client_logo}'></td>";
+                                echo "<td><a class='btn btn-info' href='clients.php?source=edit_comment&cl_id={$client_id}'>Edit</a></td>";
                                 ?> 
                                
                             <form action="" method="post">
@@ -337,6 +347,9 @@
                 </div>
               </div>
             </div>
+            
+              <p>Note koji se briše: za klijente je besmisleno praviti dugme view complete budući da klijent ima samo logo i ime.</p>
+
             <?php } }  ?>
             <!-- End Default Light Table Klijenti-->
 

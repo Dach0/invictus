@@ -1,9 +1,9 @@
 <?php
 
-    if(isset($_SESSION['username'])){
+if(isset($_GET['u_id'])){
 
-          $db_username = $_SESSION['username'];
-          $query = "SELECT * FROM user WHERE username = '$db_username'";
+          $db_user_id = $_GET['u_id'];
+          $query = "SELECT * FROM user WHERE id = '$db_user_id'";
           $select_user = mysqli_query($connection, $query);
         
           confirmQuery($select_user);
@@ -19,67 +19,6 @@
             $user_image = $result['user_image'];
             $user_role = $result['user_role'];
       }
-           
-if(isset($_POST['update_user'])){  
-    
-        $username = escape($_POST['username']);
-        $user_password = escape($_POST['password']);
-        $user_firstname = escape($_POST['firstname']);
-        $user_lastname = escape($_POST['lastname']);
-        $user_email = escape($_POST['email']);
-        
-        $user_image = $_FILES['image']['name'];
-        $user_image_tmp = $_FILES['image']['tmp_name'];
-        move_uploaded_file($user_image_tmp, "../images/$user_image");
-    
-     //ako se ne mijenja slika uzmi istu putanju
-        if(empty($user_image)){
-                
-                $query = "SELECT user_image FROM user WHERE id = {$user_id}";
-                $select_image = mysqli_query($connection, $query);
-                
-                $row = mysqli_fetch_assoc($select_image);
-                $user_image = $row['user_image'];
-            }
-        
-        $user_role = "ADMIN";
-        
-        if (empty($username) || empty($user_password) || empty($user_firstname) || empty($user_lastname) || empty($user_email)){
-                ?>
-                <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-                </button>
-               <i class="fa fa-exclamation-triangle mx-2"></i>
-                <strong>Greška!</strong> Polja ne mogu biti prazna!</div>
-
-            <?php
-         
-        } else {
-            
-            $query = "UPDATE `user` SET `username`=?,`user_password`=?,`user_firstname`=?,`user_lastname`=?,`user_email`=?,`user_image`=?,`user_role`=? WHERE id = $user_id";
-            $stmt = mysqli_prepare($connection, $query);
-            mysqli_stmt_bind_param($stmt, 'sssssss', $username, $user_password, $user_firstname, $user_lastname, $user_email, $user_image, $user_role);
-            mysqli_stmt_execute($stmt);
-            
-            if(!$stmt){
-                  die("Nesto nije u redu" . mysqli_error($connection));
-            }else {
-                ?>
-                <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-                </button>
-                <i class="fa fa-check mx-2"></i>
-                <strong>Uspješno!</strong> Izmijenjeni su podaci o administratoru! <?php echo "<a href='user_profile.php?source=view_all_users'>Lista administratora</a>";?></div>
-                <?php
-            
-            }
-            
-        }     
-        
-    }
-
 ?>
            
 
@@ -89,7 +28,7 @@ if(isset($_POST['update_user'])){
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Opšti pregled</span>
-                <h3 class="page-title">Korisnički profil</h3>
+                <h3 class="page-title">Pregled korisničkog profila</h3>
               </div>
             </div>
             <!-- End Page Header -->
@@ -103,9 +42,6 @@ if(isset($_POST['update_user'])){
                       <img class="rounded-circle" src="../images/<?php echo $user_image; ?>" alt="User Avatar" width="110"> </div>
                     <h4 class="mb-0"><?php echo $user_firstname . ' ' . $user_lastname; ?></h4>
                     <span class="text-muted d-block mb-2"><?php echo $user_role; ?></span>
-                     
-                      <label for="img_change" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2"><i class="material-icons mr-1">person_add</i>Promijeni sliku</label>
-                     <input hidden type="file" class="form-control" name="image" id="img_change">
                   </div>
 <!--
                   <ul class="list-group list-group-flush">
@@ -155,8 +91,9 @@ if(isset($_POST['update_user'])){
                             <div class="form-group">
                               <label for="feInputAddress">Korisničko ime</label>
                               <input type="text" class="form-control" id="feInputAddress" name="username" placeholder="milijana" value="<?php echo $username; ?>"> </div>
-                            <button type="submit" class="btn btn-accent" name="update_user">Ažuriraj podatke</button>
-                            <a class="btn btn-danger" href="user_profile.php">Odustani</a>
+                            <div class="form-row">
+                            </div>
+                            <a class="btn btn-danger" href="user_profile.php">Nazad</a>
                         </div>
                       </div>
                     </li>

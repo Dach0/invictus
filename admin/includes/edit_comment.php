@@ -93,7 +93,7 @@ if(isset($_GET['c_id'])){
                   <div class="card-body">
                     <form class="add-new-post" action="" method="post" enctype="multipart/form-data">
                       <div class="form-group">
-                        <img src="/amplitudo/invictus/images/<?php echo $db_comment_author_image ?>" alt="">
+                        <img width=150 src="/amplitudo/invictus/images/<?php echo $db_comment_author_image ?>" alt="">
                         <label class="d-block" for="image">Zamijeni sliku autora</label>
                         <input type="file" class="form-control" name="image">
                       </div>
@@ -108,6 +108,7 @@ if(isset($_GET['c_id'])){
                       <div class="btn_save_project_service">
                           <button class="btn btn-sm btn-accent ml-auto" name="update_comment">
                           <i class="material-icons">file_copy</i> Ažuriraj podatke</button>
+                        <a class="btn btn-danger ml-1" href="comments_about_us.php">Odustani</a>
                       </div>
                     </form>
                   </div>

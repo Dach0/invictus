@@ -1,9 +1,9 @@
 <?php
 
-    if(isset($_SESSION['username'])){
+if(isset($_GET['u_id'])){
 
-          $db_username = $_SESSION['username'];
-          $query = "SELECT * FROM user WHERE username = '$db_username'";
+          $db_user_id = $_GET['u_id'];
+          $query = "SELECT * FROM user WHERE id = '$db_user_id'";
           $select_user = mysqli_query($connection, $query);
         
           confirmQuery($select_user);
@@ -19,8 +19,9 @@
             $user_image = $result['user_image'];
             $user_role = $result['user_role'];
       }
-           
-if(isset($_POST['update_user'])){  
+
+
+if(isset($_POST['update_user'])){   
     
         $username = escape($_POST['username']);
         $user_password = escape($_POST['password']);
@@ -32,7 +33,7 @@ if(isset($_POST['update_user'])){
         $user_image_tmp = $_FILES['image']['tmp_name'];
         move_uploaded_file($user_image_tmp, "../images/$user_image");
     
-     //ako se ne mijenja slika uzmi istu putanju
+    //ako se ne mijenja slika uzmi istu putanju
         if(empty($user_image)){
                 
                 $query = "SELECT user_image FROM user WHERE id = {$user_id}";
@@ -57,7 +58,7 @@ if(isset($_POST['update_user'])){
          
         } else {
             
-            $query = "UPDATE `user` SET `username`=?,`user_password`=?,`user_firstname`=?,`user_lastname`=?,`user_email`=?,`user_image`=?,`user_role`=? WHERE id = $user_id";
+            $query = "UPDATE `user` SET `username`=?,`user_password`=?,`user_firstname`=?,`user_lastname`=?,`user_email`=?,`user_image`=?,`user_role`=? WHERE id = $db_user_id";
             $stmt = mysqli_prepare($connection, $query);
             mysqli_stmt_bind_param($stmt, 'sssssss', $username, $user_password, $user_firstname, $user_lastname, $user_email, $user_image, $user_role);
             mysqli_stmt_execute($stmt);

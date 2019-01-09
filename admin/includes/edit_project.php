@@ -131,6 +131,7 @@
                       <div class="btn_save_project_service">
                           <button class="btn btn-sm btn-accent ml-auto" name="update_project">
                           <i class="material-icons">file_copy</i> Ažuriraj</button>
+                          <a class="btn btn-danger ml-1" href="services_projects.php?source=view_projects">Odustani</a>
                       </div>
                     </form>
                   </div>
