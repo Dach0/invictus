@@ -12,7 +12,7 @@
         <!-- Navigation -->
            <nav class="header-nav">
                <ul class="navigation">
-                <li><a href="">Početna</a></li>
+                <li><a href="index.php">Početna</a></li>
                 <li><a href="#">Usluge</a></li>
                 <li><a href="">Rekli su o nama</a></li>
                 <li><a href="">Klijenti</a></li>
