@@ -16,7 +16,7 @@
 -->
             </ul>
             <span class="copyright ml-auto my-auto mr-2">Copyright © 2018
-              <a href="https://designrevision.com" rel="nofollow">Damjan Krivacevic</a>
+              <a href="#" rel="nofollow">Damjan Krivacevic</a>
             </span>
           </footer>
         </main>

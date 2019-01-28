@@ -19,7 +19,7 @@ function theySayAboutUs(){
 
 
 function clients(){
-   echo "<h1>Klijnti</h1>";      
+   echo "<h1>Klijenti</h1>";      
 }
 
 
@@ -107,6 +107,19 @@ function loginUser($username, $password){
 }
 // end of logging user and session start
 
+//checks if user is logged
+function isLoggedIn(){
+    
+    if(isset($_SESSION['user_role'])){
+        
+        return true;
+        
+    }
+    
+    return false;
+    
+}
+//end of islogged in
 function escape($string){
     
     global $connection;
@@ -125,4 +138,17 @@ function countFromDb($column, $table){
     $num_of_columns = $row["COUNT($column)"];
 
     return $num_of_columns;
+}
+
+
+//image placeholder, if there is no pic put this one for admin avatar
+
+function imagePlaceholder($image=''){
+    
+    if(!$image){
+        
+        return 'noImage-avatar.png';
+    } else {
+        return $image;
+    }
 }

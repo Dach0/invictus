@@ -1,7 +1,13 @@
 <?php include "../includes/db.php";?>
 <?php include "../functions.php";?>
-<?php session_start();?>
 
+<?php
+session_start();
+
+if(!isLoggedIn()){
+  redirect("/amplitudo/invictus/admin/errors.php");
+}
+?>
 
 <!doctype html>
 <html class="no-js h-100" lang="en">

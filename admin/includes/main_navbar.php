@@ -30,7 +30,7 @@
               
               ?>
            
-            <img class="user-avatar rounded-circle mr-2" src="/amplitudo/invictus/images/<?php echo $result['user_image']; ?>" alt="User Avatar">
+            <img class="user-avatar rounded-circle mr-2" src="/amplitudo/invictus/images/<?php echo imagePlaceholder($result['user_image']) ?>" alt="User Avatar">
             
             
             <span class="d-none d-md-inline-block"><?php echo $db_username; ?></span>
